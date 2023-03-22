@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
-      homeTown: {
+      city: {
         type: Sequelize.STRING,
         allowNull:false,
       },

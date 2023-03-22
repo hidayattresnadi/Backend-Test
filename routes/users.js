@@ -20,9 +20,9 @@ const upload = multer({ storage })
 
 
 // router.post('/register',upload.array('foto'),UserController.register)
-router.post('/register',upload.array('photo'),UserController.register)
+router.post('/register',upload.array('image'),UserController.register)
 router.get('/:id',upload.none(),UserController.getUser)
-router.put('/:id',upload.array('photo'),UserController.editUser)
+router.put('/:id',upload.array('image'),UserController.editUser)
 
 
 module.exports=router

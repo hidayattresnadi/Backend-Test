@@ -6,6 +6,7 @@ const { storage } = require('../cloudinary/index')
 class UserController {
     static async register(req, res, next) {
         try {
+            console.log(';;')
             const {
                 name,
                 usia,
@@ -43,6 +44,7 @@ class UserController {
             })
             res.status(201).json(user)
         } catch (error) {
+            console.log(error)
             next(error)
         }
     }
