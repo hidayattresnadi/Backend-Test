@@ -7,7 +7,6 @@ class UserController {
     static async register(req, res, next) {
         try {
             const {
-                urlEndpoint,
                 name,
                 birthdayDate,
                 age,
@@ -36,7 +35,6 @@ class UserController {
                 crop: 'fill'
             })
             const user = await User.create({
-                urlEndpoint,
                 name,
                 birthdayDate,
                 age,
@@ -52,10 +50,10 @@ class UserController {
     }
     static async getUser(req, res, next) {
         try {
-            const {urlEndpoint}=req.body
+            const {id}=req.params
             const user = await User.findOne({
                 where: {
-                    urlEndpoint: urlEndpoint
+                    id: id
                 }
             })
             res.status(200).json(user)
@@ -67,7 +65,6 @@ class UserController {
         try {
             const {id}=req.params
             const {
-                urlEndpoint,
                 name,
                 birthdayDate,
                 age,
@@ -87,7 +84,7 @@ class UserController {
                 height: 500,
                 crop: 'fill'
             })
-            const user = await User.update({urlEndpoint,
+            const user = await User.update({
                 name,
                 birthdayDate,
                 age,

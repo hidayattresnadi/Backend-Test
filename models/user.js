@@ -14,21 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    urlEndpoint: {
-      type: DataTypes.TEXT,
-      allowNull:false,
-      unique: {
-        msg:'urlEndpoint is already exist'
-      },
-      validate:{
-        notNull: {
-          msg: 'urlEndpoint required'
-        },
-        notEmpty: {
-          msg: 'urlEndpoint required'
-        }
-      }
-    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,

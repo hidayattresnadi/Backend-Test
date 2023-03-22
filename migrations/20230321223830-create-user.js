@@ -12,11 +12,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      urlEndpoint: {
-        type: Sequelize.TEXT,
-        allowNull:false,
-        unique:true
-      },
       name: {
         type: Sequelize.STRING,
         allowNull:false,

@@ -21,7 +21,7 @@ const upload = multer({ storage })
 
 // router.post('/register',upload.array('foto'),UserController.register)
 router.post('/register',upload.array('photo'),UserController.register)
-router.get('/',upload.none(),UserController.getUser)
+router.get('/:id',upload.none(),UserController.getUser)
 router.put('/:id',upload.array('photo'),UserController.editUser)
 
 
