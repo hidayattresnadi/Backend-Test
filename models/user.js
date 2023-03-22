@@ -26,18 +26,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    birthdayDate: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: 'birthday date required'
-        },
-        notEmpty: {
-          msg: 'birthday date required'
-        }
-      }
-    },
     age: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -50,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    whatsappNumber: {
+    mobile: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -62,19 +50,19 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    homeTown: {
+    city: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: {
-          msg: 'home town required'
+          msg: 'city required'
         },
         notEmpty: {
-          msg: 'home town required'
+          msg: 'city required'
         }
       }
     },
-    lastEducation: {
+    education: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -86,7 +74,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    photo: DataTypes.ARRAY(TEXT)
+    image: DataTypes.ARRAY(TEXT)
   }, {
     sequelize,
     modelName: 'User',

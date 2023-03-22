@@ -16,15 +16,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false,
       },
-      birthdayDate: {
-        type: Sequelize.DATE,
-        allowNull:false,
-      },
       age: {
         type: Sequelize.INTEGER,
         allowNull:false
       },
-      whatsappNumber: {
+      mobile: {
         type: Sequelize.STRING,
         allowNull:false
       },
@@ -32,11 +28,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false,
       },
-      lastEducation: {
+      education: {
         type: Sequelize.STRING,
         allowNull:false,
       },
-      photo: {
+      image: {
         type: Sequelize.ARRAY(TEXT),
         allowNull:false
       },

@@ -8,11 +8,10 @@ class UserController {
         try {
             const {
                 name,
-                birthdayDate,
-                age,
-                whatsappNumber,
-                homeTown,
-                lastEducation
+                usia,
+                mobile,
+                city,
+                education
             } = req.body;
             // fs.access("./assets",(err)=>{
             //     if(err){
@@ -36,12 +35,11 @@ class UserController {
             })
             const user = await User.create({
                 name,
-                birthdayDate,
-                age,
-                whatsappNumber,
-                homeTown,
-                lastEducation,
-                photo: [newFoto.url, secondPhoto.url]
+                age:usia,
+                mobile,
+                city,
+                education,
+                image: [newFoto.url, secondPhoto.url]
             })
             res.status(201).json(user)
         } catch (error) {
@@ -66,11 +64,10 @@ class UserController {
             const {id}=req.params
             const {
                 name,
-                birthdayDate,
-                age,
-                whatsappNumber,
-                homeTown,
-                lastEducation
+                usia,
+                mobile,
+                city,
+                education
             } = req.body;
             const newFoto = await cloudinary.uploader.upload(req.files[0].path, {
                 folder: "assets",
@@ -86,12 +83,11 @@ class UserController {
             })
             const user = await User.update({
                 name,
-                birthdayDate,
-                age,
-                whatsappNumber,
-                homeTown,
-                lastEducation,
-                photo: [newFoto.url, secondPhoto.url]},{
+                age:usia,
+                mobile,
+                city,
+                education,
+                image: [newFoto.url, secondPhoto.url]},{
                 where: {
                     id: id
                 }
