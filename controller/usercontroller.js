@@ -6,9 +6,9 @@ const { storage } = require('../cloudinary/index')
 class UserController {
     static async register(req, res, next) {
         try {
-            console.log(';;')
             const {
                 name,
+                date,
                 usia,
                 mobile,
                 city,
@@ -36,6 +36,7 @@ class UserController {
             })
             const user = await User.create({
                 name,
+                birthDate:date,
                 age:usia,
                 mobile,
                 city,
@@ -66,6 +67,7 @@ class UserController {
             const {id}=req.params
             const {
                 name,
+                date,
                 usia,
                 mobile,
                 city,
@@ -85,6 +87,7 @@ class UserController {
             })
             const user = await User.update({
                 name,
+                birthDate:date,
                 age:usia,
                 mobile,
                 city,

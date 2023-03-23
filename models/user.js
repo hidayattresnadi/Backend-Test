@@ -26,6 +26,18 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+    birthDate:{
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: 'date required'
+        },
+        notEmpty: {
+          msg: 'date required'
+        }
+      }
+    },
     age: {
       type: DataTypes.INTEGER,
       allowNull: false,
